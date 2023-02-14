@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>contactinqury</title>
+    <style>
+            .red{
+              background-color: chocolate;
+              text-align: center;
+              color: aliceblue;
+              padding: 50px;
+
+            }
+            div{
+              text-justify: auto;
+              text-align: center;
+              margin: 20px;
+              padding: 10px;
+            
+            }
+
+    </style>
+</head>
+<body>
+    <form method="post" action="{% url 'saveinqury' %}" id="contact">
+      {% csrf_token %}
+        <!-- 2 column grid layout with text inputs for the first and last names -->
+        <div class="red">
+          {{n}}
+              <div>
+                <label>First name</label>
+                <input type="text" name="name" placeholder="Name" required/>
+              </div>
+              <div>
+                <label>Last name</label>
+                <input type="text" name="last_name" placeholder=" Last Name"/>
+              </div>
+
+              <!-- Email input -->
+              <div >
+                <label>Email</label>
+                <input type="email" name="email" placeholder="Email"/>
+              </div>
+        
+              <!-- Number input -->
+              <div>
+                <label>Phone</label>
+                <input type="number" name="phone" placeholder="phone Number"/> 
+              </div>
+            
+              <!-- Message input -->
+              <div>
+                <label>Massage</label>
+                <textarea name="massage" placeholder="Massage"></textarea>
+              </div>
+              <div>
+              <!-- Submit button -->
+              <button type="submit">Submit</button>
+              </div>
+        </div>
+      </form>
+</body>
+</html>

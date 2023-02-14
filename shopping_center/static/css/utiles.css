@@ -1,0 +1,49 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.flex-all-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.carousel-inner{
+    height: 50vh;
+    width: 180vh;
+
+}
+#carouselExampleControls{
+    padding-left: 140px;
+    
+}
+.input{
+    width: 450px;
+    height: 50px;
+    text-align: center; 
+    background-color: rgb(201, 140, 199);
+    border-radius: 10px;
+}
+.card1{
+    
+    background-color: rgb(136, 196, 196);
+    display: flex;
+    height: 220px;
+
+}
+.card-item{
+    margin: 10px;
+}
+.images{
+    height: 130px;
+}
+.line p{
+   margin: 0;
+   color: black;
+}
+.active{
+    background-color: brown;
+}
+.success{
+    color: rgb(234, 52, 52);
+}

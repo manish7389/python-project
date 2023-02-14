@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>newsdetails</title>
+</head>
+<body>
+    <section style="text-align: center; padding: 30px; background-color: rgb(242, 227, 13);">
+    <h1>{{newsdetails.news_title}}</h1>
+    <p>{{newsdetails.news_desc | safe}}</p>
+    <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod quos officia molestiae nulla excepturi, beatae corporis magnam unde ab odio quo obcaecati mollitia iure ipsam fuga quas repellendus id ex. Culpa, velit. Deserunt, ullam eius. Inventore vero accusantium ex et delectus distinctio dolores, ullam autem explicabo? Reiciendis quis qui accusantium, aut rem quaerat? Iure, sunt sed eius quidem deserunt porro fugiat nostrum ipsam delectus, expedita in. Ea quia neque nesciunt ut laudantium est aut soluta id facilis recusandae voluptates saepe sapiente corporis accusamus iste accusantium temporibus, dignissimos, magnam esse vero aliquid deserunt. Tempora consequuntur nam quae quo velit autem officiis.Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa ut veniam necessitatibus delectus est iure provident laboriosam, quo, quos voluptatibus atque perferendis a, minima quam? Doloremque necessitatibus repudiandae amet cupiditate sunt veniam nam corrupti provident!</div>
+    <div style="width:50px;">
+    {% if newsdetails.news_image != NULL %}
+    <img style="width: 900px;" src="/media/{{newsdetails.news_image}}"/>
+    {% endif %}
+    </div>
+    </section>
+</body>
+</html>

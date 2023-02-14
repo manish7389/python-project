@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+{% block content %}
+<body>
+   <p>
+    <b>*****{{title}}*****</b><br>
+     ******************{{bdata}}****************************<br>
+    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veniam quod amet illo aliquam expedita<br> 
+    unde repellat tene tur dolorem. Aspernatur alias eveniet et ducimus!<br>
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus officiis neque ipsam!<br>
+   </p>
+    {%for i in clist%}
+    <div>{{forloop.counter}} {{i}}</div>
+    {%endfor%}
+<br>
+    <form method="get">
+        <div style="text-align: center;">
+            <div>
+                <input style="border: solid;" type="text" name="servicename" value=""/>
+            </div>
+            <div>
+                <input style="background-color: rgb(73, 225, 13);" type="submit" name="search" value="Search"/>
+            </div>
+        <div>
+    </form>
+
+
+<br>
+
+  <div style="background-color: rgba(161, 225, 22, 0.961);text-align: center;padding: 5px;"> 
+        {% for n in servicesdata %}
+    <div style="display: inline-table;margin: 10px;border: solid;border-color: brown;padding: 5px;">
+            <div>{{n.services_icon}}</div>
+            <div>{{n.services_title}}</div>
+            <div>{{n.services_des}}</div>
+    </div>
+        {% empty %}
+        No Data Found
+        {% endfor %}
+   </div>
+   <div>
+   <nav aria-label="...">
+    <ul class="pagination">
+        {% if servicesdata.has_previous %}
+      <li class="page-item ">
+        <a class="page-link" href="?page=1" tabindex="-1">first</a>
+      </li>
+      <li class="page-item ">
+        <a class="page-link" href="?page={{servicesdata.previous_page_number}}" tabindex="-1">Previous</a>
+      </li>
+      {% endif %}
+
+      {% for n in totalpagelist %}
+      <li class="page-item"><a class="page-link" href="?page={{n}}">{{n}}</a></li>
+      {% endfor %}
+
+      {% if servicesdata.has_next %}
+      <li class="page-item">
+        <a class="page-link" href="?page={{servicesdata.next_page_number}}">Next</a>
+      </li>
+      <li class="page-item">
+        <a class="page-link" href="?page={{lastpage}}">Last</a>
+      </li>
+      {% endif %}
+    </ul>
+    </nav>
+   </div>
+
+
+   <marquee onmouseover="stop()" onmouseout="start()" style="background-color: rgba(243, 193, 14, 0.95);color: aliceblue; line-height: 50px;padding: 20px;">
+    {% for news in newsdata %}
+    <a href="/newsdetails/{{news.news_slug}}" style="color: aliceblue; font-weight: bold;">{{news.news_title}}</a>&nbsp;&nbsp;&nbsp;&nbsp;
+    <!-- Welcome To My News Page -->
+    {% endfor %}
+   </marquee>
+   <table border="10" cellpadding="10">
+            <tr>
+                <th>Name</th>
+                <th>Phone</th>
+            </tr>
+           {% for i in student_detail %}
+            <tr>
+                <td>{{i.name}}</td>
+                <td>{{i.phone}}</td>
+            </tr>
+            {% endfor %}
+
+   </table>
+   {% endblock %}
